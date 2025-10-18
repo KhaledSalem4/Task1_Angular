@@ -1,0 +1,65 @@
+<!-- <ul>
+  @for(c of peopleByCountry; track c.country) {
+  <li>
+    <h3>{{c.country}}</h3>
+  </li>
+  }
+</ul> -->
+
+
+<!-- <ul>
+  @for(c of peopleByCountry; track c.country) {
+  @switch (c.country) {
+  @case('UK') {
+  <li style="color: green">
+    <h3>{{c.country}}</h3>
+  </li>
+  }
+  @case('US') {
+  <li style="color: red">
+    <h3>{{c.country}}</h3>
+  </li>
+  }
+  @default {
+  <li style="color: blue">
+    <h3>{{c.country}}</h3>
+  </li>
+  }
+
+  }
+  }
+</ul> -->
+
+
+
+<ul>
+  @for(c of peopleByCountry; track c.country) {
+  @switch (c.country) {
+  @case('UK') {
+  <li>
+    <h3 style="color: green">{{c.country}}</h3>
+    @for(p of c.people; track p.name) {
+    <p>{{p.name}}</p>
+    }
+  </li>
+  }
+  @case('US') {
+  <li>
+    <h3 style="color: red">{{c.country}}</h3>
+    @for(p of c.people; track p.name) {
+    <p>{{p.name}}</p>
+    }
+  </li>
+  }
+  @default {
+  <li>
+    <h3 style="color: blue">{{c.country}}</h3>
+    @for(p of c.people; track p.name) {
+    <p>{{p.name}}</p>
+    }
+  </li>
+  }
+
+  }
+  }
+</ul>
